@@ -21,32 +21,52 @@ $(() => {
     //Simple stuff. Each correct answer is a point, each incorrect is nothing.
 //Clicking "begin" will initiate the game (function).
 
-const questions = [
-  'this is an example question?',
-  'this is another sample question'
-]
+const playerOne = {
+  name: "",
+  points: 0,
+}
 
-const answers = [
-  'example answer 1',
-  'example answer 2',
-  'example answer 3'
-]
-
-
-
+const playerTwo = {
+  name: "",
+  points: 0
+}
+console.log(playerTwo);
+console.log(playerOne);
 
 const startGame = () => {
   $('#welcome').remove();
   $('#start').remove();
-  const $firstQuestion = $('<div/>').text('Sample question?');
-  $('body').append($firstQuestion)
+  questionOne();
+} //functional
+
+const questionOne = () => {
+  const $q1 = $('<div/>').text('New question?')
+  $('body').append($q1);
+    const $answerA = $('<button>').text('answer A');
+    $('body').append($answerA);
+    const $answerB = $('<button>').text('answer B');
+    $('body').append($answerB);
+    const $answerC = $('<button>').text('answer C');
+    $('body').append($answerC);
+
+      $answerA.on('click', wrongAnswer);
+      $answerB.on('click', wrongAnswer);
+      $answerC.on('click', rightAnswer);
+} //functional
+
+const questionTwo = () => {
+
 }
 
+const rightAnswer = () => {
+  console.log('COrrect!'); // functional
+}
 
-$('#start').on('click', startGame);
+const wrongAnswer = () => {
+  console.log("NOPE!"); //functional
+}
 
-
-
+$('#start').on('click', startGame); //functional
 
 
 
