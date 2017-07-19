@@ -12,9 +12,9 @@ $(() => {
 
 //Players socres shall be kept.
 
-//The questions will be stored in arrays.
+//The questions will be stored in arrays. Or objects?
 
-//The answers will be stored in arrays.
+//The answers will be stored in arrays. Or objects?
 
 //The initial message shall display a prompt on the DOM welcoming the players. Asking them to click to begin.
   //There will be a brief game description.
@@ -23,15 +23,81 @@ $(() => {
 
 const playerOne = {
   name: "",
-  points: 0,
+  score: 0
 }
 
 const playerTwo = {
   name: "",
-  points: 0
+  score: 0
 }
-console.log(playerTwo);
-console.log(playerOne);
+
+//Lord of the Rings
+const roundOneGameQuestions = [
+  {"firstQuestion" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
+
+  {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
+
+];
+//Harry Potter
+const roundTwoGameQuestions = [
+  {"firstQuestion" : "At Hogwart's what spell does Hermione use to unlock doors? ", "correctAnswer" : "Alohomorra", "incorrectAnswerOne" : "Incendio", "incorrectAnswerTwo" : "Needle"},
+
+  {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
+
+];
+//Game of Thrones 
+const roundThreeGameQuestions = [
+  {"firstQuestion" : "What's the of House Baratheon? ", "correctAnswer" : "Stag", "incorrectAnswerOne" : "Direwolf", "incorrectAnswerTwo" : "Lion"},
+
+  {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+
+  {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
+
+];
+//tested game questions arrays
+console.log(roundOneGameQuestions[0]);
+console.log(roundTwoGameQuestions[0]);
+console.log(roundThreeGameQuestions[0]);
 
 const startGame = () => {
   $('#welcome').remove();
@@ -40,7 +106,7 @@ const startGame = () => {
 } //functional
 
 const questionOne = () => {
-  const $q1 = $('<div/>').text('New question?')
+  const $q1 = $('<div/>').text('Question one?')
   $('body').append($q1);
     const $answerA = $('<button>').text('answer A');
     $('body').append($answerA);
@@ -59,7 +125,7 @@ const questionTwo = () => {
 }
 
 const rightAnswer = () => {
-  console.log('COrrect!'); // functional
+console.log("Correct!"); // functional
 }
 
 const wrongAnswer = () => {
