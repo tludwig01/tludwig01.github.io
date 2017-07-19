@@ -34,62 +34,89 @@ const playerTwo = {
 //Lord of the Rings
 const roundOneGameQuestions = [
   {"firstQuestion" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
+//player 1
 
   {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
-
+// not entirely sure how to implement this, but the idea is there
 ];
+
 //Harry Potter
 const roundTwoGameQuestions = [
   {"firstQuestion" : "At Hogwart's what spell does Hermione use to unlock doors? ", "correctAnswer" : "Alohomorra", "incorrectAnswerOne" : "Incendio", "incorrectAnswerTwo" : "Needle"},
+//player 2 starts
 
   {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-
+//player 2
   {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
-
+//same tiebreaker as before
 ];
-//Game of Thrones 
+//if one player wins BOTH rounds
+
+
+//Game of Thrones
 const roundThreeGameQuestions = [
-  {"firstQuestion" : "What's the of House Baratheon? ", "correctAnswer" : "Stag", "incorrectAnswerOne" : "Direwolf", "incorrectAnswerTwo" : "Lion"},
+  {"firstQuestion" : "What's the sigil of House Baratheon? ", "correctAnswer" : "Stag", "incorrectAnswerOne" : "Direwolf", "incorrectAnswerTwo" : "Lion"},
+//player 1 starts
 
   {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 1
 
   {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+//player 2
 
   {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
 
@@ -102,23 +129,23 @@ console.log(roundThreeGameQuestions[0]);
 const startGame = () => {
   $('#welcome').remove();
   $('#start').remove();
-  questionOne();
+  roundOneQuestionOne();
 } //functional
 
-const questionOne = () => {
-  const $q1 = $('<div/>').text('Question one?')
+const roundOneQuestionOne = () => {
+  const $q1 = $('<div/>').text(roundOneGameQuestions[0].firstQuestion) //how do I append an array item to this?
   $('body').append($q1);
-    const $answerA = $('<button>').text('answer A');
+    const $answerA = $('<button>').attr('id', 'answerA').text(roundOneGameQuestions[0].incorrectAnswerOne);
     $('body').append($answerA);
-    const $answerB = $('<button>').text('answer B');
+    const $answerB = $('<button>').text(roundOneGameQuestions[0].incorrectAnswerTwo);
     $('body').append($answerB);
-    const $answerC = $('<button>').text('answer C');
+    const $answerC = $('<button>').text(roundOneGameQuestions[0].correctAnswer);
     $('body').append($answerC);
 
       $answerA.on('click', wrongAnswer);
       $answerB.on('click', wrongAnswer);
       $answerC.on('click', rightAnswer);
-} //functional
+} //functional // connected this to array of objects
 
 const questionTwo = () => {
 
@@ -131,6 +158,8 @@ console.log("Correct!"); // functional
 const wrongAnswer = () => {
   console.log("NOPE!"); //functional
 }
+
+const playerOneScore = $('<div/>').
 
 $('#start').on('click', startGame); //functional
 
