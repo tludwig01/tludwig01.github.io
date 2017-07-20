@@ -21,6 +21,11 @@ $(() => {
     //Simple stuff. Each correct answer is a point, each incorrect is nothing.
 //Clicking "begin" will initiate the game (function).
 
+// WHat the game will feel like from the users end:
+// begin with welcome message and rules and a button to begin the game.
+
+//upon clicking to begin the first div enters the DOM for player one.
+
 const playerOne = {
   name: "",
   score: 0
@@ -32,138 +37,109 @@ const playerTwo = {
 }
 
 //Lord of the Rings
-const roundOneGameQuestions = [
-  {"firstQuestion" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
+const lordOfTheRingsTrivia = [
+  {"question" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
 //player 1
 
-  {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+  {"question" : "When Gandalf shouts 'YOU SHALL NOT PASS!', what is the name of the creature he is shouting at?", "correctAnswer" : "Balrog", "incorrectAnswerOne" : "Nazgul", "incorrectAnswerTwo" : "Cave Troll"},
 //player 2
 
-  {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+  {"question" : "Orcs weren't always evil, nor in their current form. What were they once?", "correctAnswer" : "Elves", "incorrectAnswerOne" : "Men", "incorrectAnswerTwo" : "Dwarves"},
 //player 1
 
-  {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+  {"question" : "You know the bow wielding elf, Legolas. What's his father's name?", "correctAnswer" : "Thranduil", "incorrectAnswerOne" : "Elrond", "incorrectAnswerTwo" : "Celeborn"},
 //player 2
 
-  {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+  {"question" : "What was the name of the Skinchanger in 'The Hobbit' who turned into a bear?", "correctAnswer" : "Beorn", "incorrectAnswerOne" : "Radagast", "incorrectAnswerTwo" : "Bolg"},
 //player 1
 
-  {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+  {"question" : "How many great wizards are there?", "correctAnswer" : "Five", "incorrectAnswerOne" : "Three", "incorrectAnswerTwo" : "One"},
 //player 2
 
-  {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+  {"question" : "What was Gollum's name before he became Gollum?", "correctAnswer" : "Smeagol", "incorrectAnswerOne" : "Deagol", "incorrectAnswerTwo" : "Old Took"},
 //player 1
 
-  {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
+  {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
 //player 2
 
-  {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
+  {"tieQuestion" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"}
 // not entirely sure how to implement this, but the idea is there
 ];
 
-//Harry Potter
-const roundTwoGameQuestions = [
-  {"firstQuestion" : "At Hogwart's what spell does Hermione use to unlock doors? ", "correctAnswer" : "Alohomorra", "incorrectAnswerOne" : "Incendio", "incorrectAnswerTwo" : "Needle"},
-//player 2 starts
 
-  {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 1
+let questionNumber = 0;
 
-  {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 2
+const setupQuestions = () => {
 
-  {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 1
+  const $question =
 
-  {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 2
+  $('<div/>').addClass('clear').text(lordOfTheRingsTrivia[questionNumber].question);
 
-  {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 1
+    $('body').append($question);
 
-  {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 2
-  {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 1
+    const $answerA =
 
-  {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
-//same tiebreaker as before
-];
-//if one player wins BOTH rounds
+    $('<button>').addClass('clear').text(lordOfTheRingsTrivia[questionNumber].incorrectAnswerOne);
 
+      $('body').append($answerA);
 
-//Game of Thrones
-const roundThreeGameQuestions = [
-  {"firstQuestion" : "What's the sigil of House Baratheon? ", "correctAnswer" : "Stag", "incorrectAnswerOne" : "Direwolf", "incorrectAnswerTwo" : "Lion"},
-//player 1 starts
+    const $answerB =
 
-  {"secondQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 2
+    $('<button>').addClass('clear').text(lordOfTheRingsTrivia[questionNumber].incorrectAnswerTwo);
 
-  {"thirdQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 1
+      $('body').append($answerB);
 
-  {"fourthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 2
+    const $answerC =
 
-  {"fifthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 1
+    $('<button>').addClass('clear').text(lordOfTheRingsTrivia[questionNumber].correctAnswer);
 
-  {"sixthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 2
+      $('body').append($answerC);
 
-  {"seventhQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 1
+        questionNumber++;
 
-  {"eighthQuestion" : "This is a question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"},
-//player 2
+          $answerA.on('click', wrongAnswer);
+          $answerB.on('click', wrongAnswer);
+          $answerC.on('click', rightAnswer);
+};
 
-  {"tieBreakerQuestion" : "This is a tie breaker question", "correctAnswer" : "Correct answer", "incorrectAnswerOne" : "Incorrect", "incorrectAnswerTwo" : "Incorrect"}
+//Working, but the answer button spit out the correct answer on the same button every single time. How should I go about scrambling or randomizing them?
 
-];
-//tested game questions arrays
-console.log(roundOneGameQuestions[0]);
-console.log(roundTwoGameQuestions[0]);
-console.log(roundThreeGameQuestions[0]);
+const rightAnswer = () => {
+clearBoard();
+console.log('correct!');
+}
+// Add player points when right answer selected
+//Must affix scoreboard and perhaps message on the DOM.
+
+const wrongAnswer = () => {
+clearBoard();
+  console.log("NOPE!");
+}
+// No points when wrong answer selected
+//must affix scoreboard and perhaps a message on the DOM.
+
+const clearBoard = () => {
+  $('.clear').remove();
+  setupQuestions();
+}
+//Clears DOM and advances questions
 
 const startGame = () => {
   $('#welcome').remove();
   $('#start').remove();
-  roundOneQuestionOne();
-} //functional
-
-const roundOneQuestionOne = () => {
-  const $q1 = $('<div/>').text(roundOneGameQuestions[0].firstQuestion) //how do I append an array item to this?
-  $('body').append($q1);
-    const $answerA = $('<button>').attr('id', 'answerA').text(roundOneGameQuestions[0].incorrectAnswerOne);
-    $('body').append($answerA);
-    const $answerB = $('<button>').text(roundOneGameQuestions[0].incorrectAnswerTwo);
-    $('body').append($answerB);
-    const $answerC = $('<button>').text(roundOneGameQuestions[0].correctAnswer);
-    $('body').append($answerC);
-
-      $answerA.on('click', wrongAnswer);
-      $answerB.on('click', wrongAnswer);
-      $answerC.on('click', rightAnswer);
-} //functional // connected this to array of objects
-
-const questionTwo = () => {
-
+    setupQuestions();
 }
+//Clears initial screen, starts trivia.
 
-const rightAnswer = () => {
-console.log("Correct!"); // functional
-}
-
-const wrongAnswer = () => {
-  console.log("NOPE!"); //functional
-}
-
-const playerOneScore = $('<div/>').
-
-$('#start').on('click', startGame); //functional
+$('#start').on('click', startGame);
+//Begins trivia!
 
 
+//STILL NEEDS:
+
+//Player scoreboards and player turn alerts
+//Randomized buttons
+//DOM oriented alerts and/or messages
 
 
 
