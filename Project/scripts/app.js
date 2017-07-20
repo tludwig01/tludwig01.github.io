@@ -28,12 +28,18 @@ $(() => {
 
 const playerOne = {
   name: "",
-  score: 0
+  score: 0,
+  getName(){
+    console.log("what's your name?");
+  }
 }
 
 const playerTwo = {
   name: "",
-  score: 0
+  score: 0,
+  getName(){
+    console.log("what's your name?");
+  }
 }
 
 //Lord of the Rings
@@ -62,7 +68,7 @@ const lordOfTheRingsTrivia = [
   {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
 //player 2
 
-  {"tieQuestion" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"}
+  {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"}
 // not entirely sure how to implement this, but the idea is there
 ];
 
@@ -79,19 +85,19 @@ const setupQuestions = () => {
 
     const $answerA =
 
-    $('<button>').addClass('clear').text(lordOfTheRingsTrivia[questionNumber].incorrectAnswerOne);
+    $('<button>').addClass('button').text(lordOfTheRingsTrivia[questionNumber].incorrectAnswerOne);
 
       $('body').append($answerA);
 
     const $answerB =
 
-    $('<button>').addClass('clear').text(lordOfTheRingsTrivia[questionNumber].incorrectAnswerTwo);
+    $('<button>').addClass('button').text(lordOfTheRingsTrivia[questionNumber].incorrectAnswerTwo);
 
       $('body').append($answerB);
 
     const $answerC =
 
-    $('<button>').addClass('clear').text(lordOfTheRingsTrivia[questionNumber].correctAnswer);
+    $('<button>').addClass('button').text(lordOfTheRingsTrivia[questionNumber].correctAnswer);
 
       $('body').append($answerC);
 
@@ -102,7 +108,7 @@ const setupQuestions = () => {
           $answerC.on('click', rightAnswer);
 };
 
-//Working, but the answer button spit out the correct answer on the same button every single time. How should I go about scrambling or randomizing them?
+//Working, but the answer button spits out the correct answer on the same button every single time. How should I go about scrambling or randomizing them?
 
 const rightAnswer = () => {
 clearBoard();
@@ -120,6 +126,7 @@ clearBoard();
 
 const clearBoard = () => {
   $('.clear').remove();
+  $('.button').remove();
   setupQuestions();
 }
 //Clears DOM and advances questions
@@ -128,15 +135,20 @@ const startGame = () => {
   $('#welcome').remove();
   $('#start').remove();
     setupQuestions();
+    playerOne.getName();
+    playerTwo.getName();
 }
 //Clears initial screen, starts trivia.
 
 $('#start').on('click', startGame);
+
 //Begins trivia!
 
 
 //STILL NEEDS:
 
+
+//End round function
 //Player scoreboards and player turn alerts
 //Randomized buttons
 //DOM oriented alerts and/or messages

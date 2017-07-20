@@ -1,0 +1,39 @@
+h1, h3 {
+  border: 1px solid grey;
+  text-align: center;
+}
+
+p {
+  color: red;
+  border: 1px solid grey;
+}
+
+#start {
+  border: 1px solid grey;
+}
+
+.button {
+  border: 1px solid blue;
+  background-color: white;
+  float: none;
+}
+
+.clear {
+  border: 1px solid red;
+  padding: 100px;
+}
+
+#player1 {
+  border: 1px solid green;
+  float: left;
+  padding-top: 300px;
+  padding-left: 100px;
+
+}
+
+#player2 {
+  border: 1px solid green;
+  float: right;
+  padding-top: 300px;
+  padding-right: 100px;
+}
