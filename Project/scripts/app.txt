@@ -44,17 +44,9 @@ const roundOneQuestions = [
 
   {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
 
-  {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"},
-
-  {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"}
+  {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"}
 ];
 
-//player one get 5 questions, player two gets 5 questions. How?
-//display round one win or tie
-//move to round two
-
-
-//second round
 const roundTwoQuestions = [
   {"question" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
 
@@ -74,13 +66,9 @@ const roundTwoQuestions = [
 
   {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"},
 
-  {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"}
+  {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"},
 
 ];
-
-//player one get 5 questions, player two gets 5 questions. How?
-//display round two win or tie.
-//move to round three if game isn't over.
 
 const roundThreeQuestions = [
   {"question" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
@@ -99,20 +87,13 @@ const roundThreeQuestions = [
 
   {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
 
-  {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"},
-
-  {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"}
+  {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"}
 ];
 
-//each player gets 5 questions if necessary.
-//display round three win or tie.
-//check if game is over
-//offer restart
-
-for (let i=0; i<roundOneQuestions.length; i+=2){
-  const playerOneQuestions = roundOneQuestions[i];
-  console.log(playerOneQuestions);
-}
+// for (let i=0; i<roundOneQuestions.length; i+=2){
+//   const playerOneQuestions = roundOneQuestions[i];
+//   console.log(playerOneQuestions);
+// }
 
 
 const playerOne = {
@@ -120,10 +101,7 @@ const playerOne = {
   score: 0,
   getPoint(){
     playerOne.score++;
-    currentPlayer = playerTwo;
-  },
-  questionsAnswered: 0
-
+  }
 };
 
 const playerTwo = {
@@ -131,9 +109,7 @@ const playerTwo = {
   score: 0,
   getPoint(){
     playerTwo.score++;
-    currentPlayer = playerOne;
-  },
-  questionsAnswered: 0
+  }
 };
 //PLAYERS//
 
@@ -151,8 +127,6 @@ const gameState = {
 
 };
 
-let currentPlayer = playerOne;
-let questionsAnswered = 0;
 
 let questionNumber = 0;
 
@@ -197,20 +171,17 @@ const roundTwo = () => {
 
 const rightAnswer = () => {
 clearBoard();
-currentPlayer.getPoint();
-// playerTwo.getPoint();
+playerOne.getPoint();
+playerTwo.getPoint();
 scoreBoard();
 }
 //Right answer gives one point
 
 const wrongAnswer = () => {
 clearBoard();
+playerOne.score = playerOne.score;
+playerTwo.score = playerTwo.score;
 scoreBoard();
-if(currentPlayer === playerOne){
-  currentPlayer = playerTwo;
-} else {
-  currentPlayer = playerOne;
-}
 }
 //Wrong answer keeps score the same.
 
@@ -238,10 +209,7 @@ const checkWinGame = () => {
 const clearBoard = () => {
   $('.clear').remove();
   $('.button').remove();
-  questionsAnswered++;
-  console.log(questionsAnswered);
   setupQuestions();
-
 }
 //Clears DOM and advances questions
 
