@@ -47,6 +47,11 @@ const roundOne = [
   {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"}
 ];
 
+for (let i=0; i<roundOne.length; i+=3){
+  const playerOneQuestions = roundOne[i];
+  console.log(playerOneQuestions);
+}
+
 const playerOne = {
   name: "",
   score: 0,
@@ -77,10 +82,12 @@ const gameState = {
     }
   },
   changeRound(){
-
+    if (roundOne === undefined){
+      roundTwo();
+    }
   }
 };
-//GAME//
+
 
 let questionNumber = 0;
 
@@ -123,23 +130,46 @@ const roundTwo = () => {
    console.log("works");
  }
 
-
 const rightAnswer = () => {
 clearBoard();
 playerOne.getPoint();
 playerTwo.getPoint();
-console.log(playerOne.score);
-console.log(playerTwo.score);
+playerOneScoreBoard();
+playerTwoScoreBoard();
 }
+//Right answer gives one point
 
 const wrongAnswer = () => {
 clearBoard();
-  console.log("NOPE!");
+playerOne.score = playerOne.score;
+playerTwo.score = playerTwo.score;
+}
+//Wrong answer keeps score the same.
+
+const playerOneScoreBoard = () => {
+  const $playerOnePoint =
+  $('#player1').html('Player 1 Score: ' + playerOne.score)
+}
+
+const playerTwoScoreBoard = () => {
+  const $playerTwoPoint =
+  $('#player2').html('Player 2 Score: ' + playerTwo.score)
+}
+
+const checkTieGame = () => {
+  if (playerOne.score === playerTwo.score){
+    console.log("you're both so good you tied!");
+  }
 }
 
 
-// No points when wrong answer selected
-//must affix scoreboard and perhaps a message on the DOM.
+const checkWinGame = () => {
+  if (playerOne.score > playerTwo.score){
+    console.log("congrats player 1 you're a beast");
+  } else if (playerTwo.score > playerOne.score) {
+    console.log("congrats player 2 you got this in the bag");
+  }
+}
 
 const clearBoard = () => {
   $('.clear').remove();
@@ -153,18 +183,22 @@ const startGame = () => {
   $('#start').remove();
     setupQuestions();
 }
-//Clears initial screen, starts trivia.
+// Clears initial screen, starts trivia.
+
+const endGame = () => {
+  checkTieGame();
+  checkWinGame();
+}
+//at end of game, checks for winner or tie!
 
 $('#start').on('click', startGame);
-
 //Begins trivia!
 
 
 //STILL NEEDS:
 
 
-//End round function
-//Player scoreboards and player turn alerts
+//player turn alerts
 //Randomized buttons
 //DOM oriented alerts and/or messages
 
