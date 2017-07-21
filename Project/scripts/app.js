@@ -109,11 +109,6 @@ const roundThreeQuestions = [
 //check if game is over
 //offer restart
 
-// for (let i=0; i<roundOneQuestions.length; i+=2){
-//   const playerOneQuestions = roundOneQuestions[i];
-//   console.log(playerOneQuestions);
-// }
-
 
 
 const playerOne = {
@@ -136,18 +131,10 @@ const playerTwo = {
 };
 //PLAYERS//
 
-
 const gameState = {
   questionNumber: 0,
   player: playerOne,
   round: roundOneQuestions,
-  changePlayer(){
-
-  },
-  changeRound(){
-
-  },
-
 };
 
 let currentPlayer = playerOne;
@@ -209,7 +196,7 @@ if(currentPlayer === playerOne){
 } else {
   currentPlayer = playerOne;
 }
-console.log("");
+console.log("Stupid, fat hobbit!");
 }
 //Wrong answer keeps score the same.
 
@@ -222,19 +209,24 @@ const scoreBoard = () => {
   // console.log(gameState.round[gameState.questionNumber].question);
   if(questionsAnswered === 10){
     //start round two questions
+    console.log("round2!");
     gameState.round = roundTwoQuestions;
     gameState.questionNumber = 0;
     setupQuestions();
     // questionsAnswered = 0;
   } else if (questionsAnswered === 20){
+    console.log("round3!");
     gameState.round = roundThreeQuestions;
     gameState.questionNumber = 0;
     setupQuestions();
     // questionsAnswered = 0;
+  } else if (questionsAnswered === 30){
+    endGame();
   } else {
     gameState.questionNumber++;
   }
-}
+};
+
 
 const checkTieGame = () => {
   if (playerOne.score === playerTwo.score){
