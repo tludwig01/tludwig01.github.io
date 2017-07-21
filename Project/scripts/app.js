@@ -56,7 +56,7 @@ const roundOneQuestions = [
 
 //second round
 const roundTwoQuestions = [
-  {"question" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
+  {"question" : "*************** ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
 
   {"question" : "When Gandalf shouts 'YOU SHALL NOT PASS!', what is the name of the creature he is shouting at?", "correctAnswer" : "Balrog", "incorrectAnswerOne" : "Nazgul", "incorrectAnswerTwo" : "Cave Troll"},
 
@@ -109,14 +109,14 @@ const roundThreeQuestions = [
 //check if game is over
 //offer restart
 
-for (let i=0; i<roundOneQuestions.length; i+=2){
-  const playerOneQuestions = roundOneQuestions[i];
-  console.log(playerOneQuestions);
-}
+// for (let i=0; i<roundOneQuestions.length; i+=2){
+//   const playerOneQuestions = roundOneQuestions[i];
+//   console.log(playerOneQuestions);
+// }
+
 
 
 const playerOne = {
-  name: "",
   score: 0,
   getPoint(){
     playerOne.score++;
@@ -127,7 +127,6 @@ const playerOne = {
 };
 
 const playerTwo = {
-  name: "",
   score: 0,
   getPoint(){
     playerTwo.score++;
@@ -153,7 +152,6 @@ const gameState = {
 
 let currentPlayer = playerOne;
 let questionsAnswered = 0;
-
 let questionNumber = 0;
 
 const setupQuestions = () => {
@@ -182,7 +180,7 @@ const setupQuestions = () => {
 
       $('body').append($answerC);
 
-        gameState.questionNumber++;
+        // gameState.questionNumber++;
 
           $answerA.on('click', wrongAnswer);
           $answerB.on('click', wrongAnswer);
@@ -198,19 +196,20 @@ const roundTwo = () => {
 const rightAnswer = () => {
 clearBoard();
 currentPlayer.getPoint();
-// playerTwo.getPoint();
-scoreBoard();
+// scoreBoard();
+console.log("Gandalf looks to you for wisdom.");
 }
 //Right answer gives one point
 
 const wrongAnswer = () => {
 clearBoard();
-scoreBoard();
+// scoreBoard();
 if(currentPlayer === playerOne){
   currentPlayer = playerTwo;
 } else {
   currentPlayer = playerOne;
 }
+console.log("");
 }
 //Wrong answer keeps score the same.
 
@@ -219,6 +218,22 @@ const scoreBoard = () => {
   $('#player1').html('Player 1 Score: ' + playerOne.score);
   const $playerTwoPoint =
   $('#player2').html('Player 2 Score: ' + playerTwo.score);
+  console.log("************");
+  // console.log(gameState.round[gameState.questionNumber].question);
+  if(questionsAnswered === 10){
+    //start round two questions
+    gameState.round = roundTwoQuestions;
+    gameState.questionNumber = 0;
+    setupQuestions();
+    // questionsAnswered = 0;
+  } else if (questionsAnswered === 20){
+    gameState.round = roundThreeQuestions;
+    gameState.questionNumber = 0;
+    setupQuestions();
+    // questionsAnswered = 0;
+  } else {
+    gameState.questionNumber++;
+  }
 }
 
 const checkTieGame = () => {
@@ -241,6 +256,7 @@ const clearBoard = () => {
   questionsAnswered++;
   console.log(questionsAnswered);
   setupQuestions();
+  scoreBoard();
 
 }
 //Clears DOM and advances questions
