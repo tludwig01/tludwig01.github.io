@@ -1,24 +1,17 @@
 h1, h3 {
-  border: 1px solid grey;
   text-align: center;
   font-family: fantasy;
 }
 
 p {
   font-family: fantasy;
-  border: 1px solid grey;
   text-align: center;
 }
 
 #start {
   text-align: center;
   font-family: fantasy;
-}
-
-@-webkit-keyframes greenPulse {
-  from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
-  to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+  margin: auto;
 }
 
 .button {
@@ -30,19 +23,33 @@ p {
   -webkit-animation-name: greenPulse;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
+  align-items: center;
+  justify-content: center;
 }
 
 /*Researched how to do glowing buttons on the internets. W3Schools on CSS Animation!*/
 
 .clear {
-  border: 1px solid red;
   padding: 100px;
   text-align: center;
   font-family: fantasy;
+  opacity: 1;
+  animation: fade 1s linear;
 }
 
+@keyframes fade {
+  0%,100% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes greenPulse {
+  from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+  to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+/*YAY fading the questions in*/
+
 #player1 {
-  border: 1px solid green;
   float: left;
   padding-top: 300px;
   padding-left: 100px;
@@ -52,7 +59,6 @@ p {
 }
 
 #player2 {
-  border: 1px solid green;
   float: right;
   padding-top: 300px;
   padding-right: 100px;
