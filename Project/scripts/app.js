@@ -143,6 +143,8 @@ const setupQuestions = () => {
 //Really having trouble RANDOMIZING THE BUTTONS. I just want to shuffle them so the correct damn answer isn't on the same button every single time.
 };
 
+
+
 //A correct answer gains ONE point. The turn switches back to the other player.
 const rightAnswer = () => {
   currentPlayer.getPoint();
