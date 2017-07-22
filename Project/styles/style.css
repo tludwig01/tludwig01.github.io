@@ -1,17 +1,29 @@
+body {
+  background-image: url("/Users/tludwig/dev/tludwig01.github.io/Project/images/dark-forest-drawing.jpg");
+  background-size: cover;
+  opacity: 1;
+}
+
 h1, h3 {
   text-align: center;
   font-family: fantasy;
+  color: chartreuse;
 }
 
 p {
   font-family: fantasy;
   text-align: center;
+  color: chartreuse;
 }
 
 #start {
   text-align: center;
   font-family: fantasy;
   margin: auto;
+  background: none;
+  border: none;
+  color: chartreuse;
+  font-size: 20px;
 }
 
 .button {
@@ -33,6 +45,7 @@ p {
   padding: 100px;
   text-align: center;
   font-family: fantasy;
+  color: chartreuse;
   opacity: 1;
   animation: fade 1s linear;
 }
@@ -55,6 +68,7 @@ p {
   padding-left: 100px;
   font-family: fantasy;
   font-size: 20px;
+  color: magenta;
 
 }
 
@@ -64,4 +78,5 @@ p {
   padding-right: 100px;
   font-family: fantasy;
   font-size: 20px;
+  color: royalblue;
 }
