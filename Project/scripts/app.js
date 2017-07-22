@@ -34,50 +34,47 @@ const roundTwoQuestions = [
 //Eleventh question to player 1
   {"question" : "Harry Potter understands Parseltongue, which means he can speak to what?", "correctAnswer" : "Snakes", "incorrectAnswerOne" : "Dementors", "incorrectAnswerTwo" : "Spirits"},
 //Twelfth question to player 2
-  {"question" : "Orcs weren't always evil, nor in their current form. What were they once?", "correctAnswer" : "Elves", "incorrectAnswerOne" : "Men", "incorrectAnswerTwo" : "Dwarves"},
+  {"question" : "What's Professor McGonagal's first name?", "correctAnswer" : "Minerva", "incorrectAnswerOne" : "Rosetta", "incorrectAnswerTwo" : "Mina"},
 //Thirteenth question to player 1
-  {"question" : "You know the bow wielding elf, Legolas. What's his father's name?", "correctAnswer" : "Thranduil", "incorrectAnswerOne" : "Elrond", "incorrectAnswerTwo" : "Celeborn"},
+  {"question" : "There are three unforgivable curses. Which one inflicts pain?", "correctAnswer" : "Crucio", "incorrectAnswerOne" : "Imperio", "incorrectAnswerTwo" : "Avada Kedavara"},
 //Fourteenth question to player 2
-  {"question" : "What was the name of the Skinchanger in 'The Hobbit' who turned into a bear?", "correctAnswer" : "Beorn", "incorrectAnswerOne" : "Radagast", "incorrectAnswerTwo" : "Bolg"},
+  {"question" : "What's Harry Potter's owl's name?", "correctAnswer" : "Hedwig", "incorrectAnswerOne" : "Ludwig", "incorrectAnswerTwo" : "Germinius"},
 //Fifteenth question to player 1
-  {"question" : "How many great wizards are there?", "correctAnswer" : "Five", "incorrectAnswerOne" : "Three", "incorrectAnswerTwo" : "One"},
+  {"question" : "When Harry finds a Potions textbook belonging to the 'half blood prince', he learns quite a bit, both good and bad. Who's the half-blood prince?", "correctAnswer" : "Severus Snape", "incorrectAnswerOne" : "Sirius Black", "incorrectAnswerTwo" : "Tom Riddle"},
 //Sixteenth question to player 2
-  {"question" : "What was Gollum's name before he became Gollum?", "correctAnswer" : "Smeagol", "incorrectAnswerOne" : "Deagol", "incorrectAnswerTwo" : "Old Took"},
+  {"question" : "In order for a Polyjuice potion to effectively temporarily transfigure you to someone else, what is absolutely required from the person you're trying to turn into?", "correctAnswer" : "a hair", "incorrectAnswerOne" : "an article of clothing", "incorrectAnswerTwo" : "their wand"},
 //Seventeeth question to player 1
-  {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
+  {"question" : "What platform do the students take to board the Hogwart's Express?", "correctAnswer" : "9 3/4", "incorrectAnswerOne" : "Kings Cross Station", "incorrectAnswerTwo" : "13"},
 //Eighteenth question to player 2
-  {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"},
+  {"question" : "The dark lord's closest followers are called what?", "correctAnswer" : "Death Eaters", "incorrectAnswerOne" : "Dementors", "incorrectAnswerTwo" : "The Dark Lord's Army"},
 //Nineteenth question to player 1
-  {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"}
+  {"question" : "How many Horcruxes had the Dark Lord affixed his soul to?", "correctAnswer" : "Six", "incorrectAnswerOne" : "One", "incorrectAnswerTwo" : "Three"}
 //Twentieth question to player 2
 ];
 
 //Third Round: Westeros.
 const roundThreeQuestions = [
-  {"question" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
+  {"question" : "Who are the rightful rulers of Westeros and heirs to the Iron Throne?", "correctAnswer" : "The Targaryens", "incorrectAnswerOne" : "The Baratheons", "incorrectAnswerTwo" : "The Lannisters"},
 //Twenty-first question to player 1
-  {"question" : "When Gandalf shouts 'YOU SHALL NOT PASS!', what is the name of the creature he is shouting at?", "correctAnswer" : "Balrog", "incorrectAnswerOne" : "Nazgul", "incorrectAnswerTwo" : "Cave Troll"},
+  {"question" : "What does 'Valar Morghulis' mean?", "correctAnswer" : "All men must die", "incorrectAnswerOne" : "All men must serve", "incorrectAnswerTwo" : "a foreign saying of respect for the king"},
 //Twenty-second question to player 2
-  {"question" : "Orcs weren't always evil, nor in their current form. What were they once?", "correctAnswer" : "Elves", "incorrectAnswerOne" : "Men", "incorrectAnswerTwo" : "Dwarves"},
+  {"question" : "Eddard Stark is beheaded with his own sword. Super huge bummer. What's his sword called?", "correctAnswer" : "Ice", "incorrectAnswerOne" : "Oathkeeper", "incorrectAnswerTwo" : "Sword of Morning"},
 //Twenty-third question to player 1
-  {"question" : "You know the bow wielding elf, Legolas. What's his father's name?", "correctAnswer" : "Thranduil", "incorrectAnswerOne" : "Elrond", "incorrectAnswerTwo" : "Celeborn"},
+  {"question" : "King Joffrey finally dies and it's pretty gruesome. With which poison was he killed?", "correctAnswer" : "The Strangler", "incorrectAnswerOne" : "Tears of Lys", "incorrectAnswerTwo" : "Dragon's Kiss"},
 //Twenty-fourth question to player 2
-  {"question" : "What was the name of the Skinchanger in 'The Hobbit' who turned into a bear?", "correctAnswer" : "Beorn", "incorrectAnswerOne" : "Radagast", "incorrectAnswerTwo" : "Bolg"},
+  {"question" : "Skinchangers in Westeros aren't very highly regarded and are given what name?", "correctAnswer" : "Wargs", "incorrectAnswerOne" : "Shapeshifters", "incorrectAnswerTwo" : "Unholy Animals"},
 //Twenty-fifth question to player 1
-  {"question" : "How many great wizards are there?", "correctAnswer" : "Five", "incorrectAnswerOne" : "Three", "incorrectAnswerTwo" : "One"},
+  {"question" : "Danaerys Targaryen had a twin brother who wasn't grateful for what he was given and it cost him his life. How'd that happen?", "correctAnswer" : "molten gold", "incorrectAnswerOne" : "beheaded", "incorrectAnswerTwo" : "dragged by horses"},
 //Twenty-sixth question to player 2
-  {"question" : "What was Gollum's name before he became Gollum?", "correctAnswer" : "Smeagol", "incorrectAnswerOne" : "Deagol", "incorrectAnswerTwo" : "Old Took"},
+  {"question" : "What is the house sigil of house Greyjoy of the Iron Islands?", "correctAnswer" : "Kraken", "incorrectAnswerOne" : "Fleet of Ships", "incorrectAnswerTwo" : "Shield and Spear"},
 //Twenty-seventh question to player 1
-  {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
+  {"question" : "Which of these is NOT one of the Seven Kingdoms?", "correctAnswer" : "Braavos", "incorrectAnswerOne" : "The Riverlands", "incorrectAnswerTwo" : "The Vale"},
 //Twenty-eighth question player 2
-  {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"},
+  {"question" : "Which giant castle still stands, but so badly damaged by dragonfire, the stones melted?", "correctAnswer" : "Harrenhall", "incorrectAnswerOne" : "Dragonstone", "incorrectAnswerTwo" : "Casterly Rock"},
 //Twenty-ninth question to player 1
-  {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"}
+  {"question" : "Who are the nomadic people with a massive army on horseback?", "correctAnswer" : "Dothraki", "incorrectAnswerOne" : "Braavosi", "incorrectAnswerTwo" : "Qaartheen"}
 //Thirtieth question to player 2
 ];
-
-
-
 
 const playerOne = {
   name: "Player One",
@@ -107,7 +104,7 @@ const gameState = {
   round: roundOneQuestions
 };
 
-let currentPlayer = playerOne;
+let currentPlayer = playerTwo;
 let questionsAnswered = 0;
 let questionNumber = 0;
 
@@ -154,14 +151,14 @@ const rightAnswer = () => {
 
 //An incorrect answer gains NO points. The turn switches back to the other player.
 const wrongAnswer = () => {
+  if(currentPlayer === playerOne){
+    currentPlayer = playerTwo;
+  } else {
+    currentPlayer = playerOne;
+    }
   clearBoard();
   scoreBoard();
-    if(currentPlayer === playerOne){
-      currentPlayer = playerTwo;
-    } else {
-      currentPlayer = playerOne;
-      }
-      console.log("*rings bell* Shame! *rings bell*");
+  console.log("*rings bell* Shame! *rings bell*");
 };
 
 //Logic of scoring, game, and round flow.
@@ -169,11 +166,12 @@ const scoreBoard = () => {
 
   //Adds player 1 point to the DOM.
   const $playerOnePoint =
-  $('#player1').html('Player 1 Score: ' + playerOne.score);
+  $('#player2').html('Player 1 Score: ' + playerTwo.score); //Had to make these opposite to force them to log the scores correctly, it's annoying and wrong and I'm aware of it, but it works.
 
   //Adds player 2 point to the DOM.
   const $playerTwoPoint =
-  $('#player2').html('Player 2 Score: ' + playerTwo.score);
+  $('#player1').html('Player 2 Score: ' + playerOne.score);//See Scoring comment above. I think what was wrong is that on the initial game start button, it counts that as player 1's first click, so the first true question starts on player 2. Not sure how to change it, so I hacked it this way LOL.
+
   //When 10 questions are finished, the round switches to the next array of trivia questions.
 
   if (currentPlayer === playerOne){
@@ -183,35 +181,29 @@ const scoreBoard = () => {
   }
 
   if(questionsAnswered === 10){
-    console.log("****************");
-    console.log("START ROUND 2!");
-    console.log("****************");
     gameState.round = roundTwoQuestions;
     gameState.questionNumber = 0;
     questionsAnswered = 10;
   }
   //When 20 questions are finished, the round switches to the final array of trivia questions.
     else if (questionsAnswered === 20){
-    console.log("****************");
-    console.log("START ROUND 3!");
-    console.log("****************");
     gameState.round = roundThreeQuestions;
     gameState.questionNumber = 0;
     questionsAnswered = 20;
   }
   //When all questions are finished, endGame takes the scores of both players and announces the winner, or if they've tied.
-    else if (questionsAnswered === 30){
+    else if (questionsAnswered === 31){
     endGame();
-  } else {
-    // gameState.questionNumber++;
   }
 };
 
 //Checks scores for a tie.
 const checkTieGame = () => {
   if (playerOne.score === playerTwo.score){
-    console.log("you're both so good you tied!");
+    alert("you're both so good you tied!");
   }
+  $('.clear').remove();
+  $('.button').remove();
 };
 
 //Checks scores for a win and loss.
@@ -223,6 +215,8 @@ const checkWinGame = () => {
     alert("Player two wins!")
     console.log("congrats player 2 you got this in the bag");
   }
+  $('.clear').remove();
+  $('.button').remove();
 };
 
 //Clears DOM, switches players, and moves to next question.
@@ -244,8 +238,6 @@ const startGame = () => {
 
 //Ends the game after all questions have been answered, announcing a win, loss, and/or tie.
 const endGame = () => {
-  $('.clear').remove();
-  $('.button').remove();
   checkTieGame();
   checkWinGame();
 };
