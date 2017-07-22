@@ -172,8 +172,6 @@ const setupQuestions = () => {
           $answerA.on('click', wrongAnswer);
           $answerB.on('click', wrongAnswer);
           $answerC.on('click', rightAnswer);
-
-          
 };
 
 //Ok, I'm stuck here.
