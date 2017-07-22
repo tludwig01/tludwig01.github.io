@@ -141,6 +141,8 @@ const setupQuestions = () => {
           $answerC.on('click', rightAnswer);
 
 //Really having trouble RANDOMIZING THE BUTTONS. I just want to shuffle them so the correct damn answer isn't on the same button every single time.
+
+//The function keeps running after the game has ended. Figuring out how to kill. 
 };
 
 
@@ -208,6 +210,10 @@ const checkTieGame = () => {
   }
   $('.clear').remove();
   $('.button').remove();
+  const $restartTrivia =
+  $('<button>').attr('id', 'restart').text("Play again?");
+  $('body').append($restartTrivia)
+  $('restart').on('click', startGame); //Working on restart button
 };
 
 //Checks scores for a win and loss.
@@ -221,6 +227,10 @@ const checkWinGame = () => {
   }
   $('.clear').remove();
   $('.button').remove();
+  const restartTrivia =
+  $('<button>').attr('id', 'restart').text("Play again?");
+  $('body').append($restartTrivia)
+  $('restart').on('click'); //Working on restart button
 };
 
 //Clears DOM, switches players, and moves to next question.
