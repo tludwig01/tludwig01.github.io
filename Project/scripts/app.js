@@ -1,117 +1,86 @@
 $(() => {
 
-// The game is trivia. Correctly identifying who stated a certain quote from a book or film.
+//TRIVIA GAME ARRAYS//
 
-//It shall have TWO players.
+//Questions, correct answers, and incorrect answers.
 
-//They will alternate turns answering a question.
-
-//They will have DIFFERENT QUESTIONS
-
-//They will click on multpile choice answers. (on click events)
-
-//Players socres shall be kept.
-
-//The questions will be stored in arrays. Or objects?
-
-//The answers will be stored in arrays. Or objects?
-
-//The initial message shall display a prompt on the DOM welcoming the players. Asking them to click to begin.
-  //There will be a brief game description.
-    //Simple stuff. Each correct answer is a point, each incorrect is nothing.
-//Clicking "begin" will initiate the game (function).
-
-// WHat the game will feel like from the users end:
-// begin with welcome message and rules and a button to begin the game.
-
-//upon clicking to begin the first div enters the DOM for player one.
-
-// First Round
+//First Round: Middle Earth.
 const roundOneQuestions = [
   {"question" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Orcrist"},
-
+//First question to player 1
   {"question" : "When Gandalf shouts 'YOU SHALL NOT PASS!', what is the name of the creature he is shouting at?", "correctAnswer" : "Balrog", "incorrectAnswerOne" : "Nazgul", "incorrectAnswerTwo" : "Cave Troll"},
-
+//Second question to player 2
   {"question" : "Orcs weren't always evil, nor in their current form. What were they once?", "correctAnswer" : "Elves", "incorrectAnswerOne" : "Men", "incorrectAnswerTwo" : "Dwarves"},
-
+//Third question to player 1
   {"question" : "You know the bow wielding elf, Legolas. What's his father's name?", "correctAnswer" : "Thranduil", "incorrectAnswerOne" : "Elrond", "incorrectAnswerTwo" : "Celeborn"},
-
+//Fourth question to player 2
   {"question" : "What was the name of the Skinchanger in 'The Hobbit' who turned into a bear?", "correctAnswer" : "Beorn", "incorrectAnswerOne" : "Radagast", "incorrectAnswerTwo" : "Bolg"},
-
+//Fifth question to player 1
   {"question" : "How many great wizards are there?", "correctAnswer" : "Five", "incorrectAnswerOne" : "Three", "incorrectAnswerTwo" : "One"},
-
+//Sixth question to player 2
   {"question" : "What was Gollum's name before he became Gollum?", "correctAnswer" : "Smeagol", "incorrectAnswerOne" : "Deagol", "incorrectAnswerTwo" : "Old Took"},
-
+//Seventh question to player 1
   {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
-
+//Eighth question to player 2
   {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"},
-
+//Ninth question to player 1
   {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"}
+//Tenth question to player 2
 ];
 
-//player one get 5 questions, player two gets 5 questions. How?
-//display round one win or tie
-//move to round two
-
-
-//second round
+//Second Round: Hogwart's School of Witchcraft and Wizardry.
 const roundTwoQuestions = [
-  {"question" : "*************** ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
-
-  {"question" : "When Gandalf shouts 'YOU SHALL NOT PASS!', what is the name of the creature he is shouting at?", "correctAnswer" : "Balrog", "incorrectAnswerOne" : "Nazgul", "incorrectAnswerTwo" : "Cave Troll"},
-
+  {"question" : "Which spell does Hermione use to unlock doors?", "correctAnswer" : "Alohomorra", "incorrectAnswerOne" : "Oculo Reparo", "incorrectAnswerTwo" : "Wingardium Leviosa"},
+//Eleventh question to player 1
+  {"question" : "Harry Potter understands Parseltongue, which means he can speak to what?", "correctAnswer" : "Snakes", "incorrectAnswerOne" : "Dementors", "incorrectAnswerTwo" : "Spirits"},
+//Twelfth question to player 2
   {"question" : "Orcs weren't always evil, nor in their current form. What were they once?", "correctAnswer" : "Elves", "incorrectAnswerOne" : "Men", "incorrectAnswerTwo" : "Dwarves"},
-
+//Thirteenth question to player 1
   {"question" : "You know the bow wielding elf, Legolas. What's his father's name?", "correctAnswer" : "Thranduil", "incorrectAnswerOne" : "Elrond", "incorrectAnswerTwo" : "Celeborn"},
-
+//Fourteenth question to player 2
   {"question" : "What was the name of the Skinchanger in 'The Hobbit' who turned into a bear?", "correctAnswer" : "Beorn", "incorrectAnswerOne" : "Radagast", "incorrectAnswerTwo" : "Bolg"},
-
+//Fifteenth question to player 1
   {"question" : "How many great wizards are there?", "correctAnswer" : "Five", "incorrectAnswerOne" : "Three", "incorrectAnswerTwo" : "One"},
-
+//Sixteenth question to player 2
   {"question" : "What was Gollum's name before he became Gollum?", "correctAnswer" : "Smeagol", "incorrectAnswerOne" : "Deagol", "incorrectAnswerTwo" : "Old Took"},
-
+//Seventeeth question to player 1
   {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
-
+//Eighteenth question to player 2
   {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"},
-
+//Nineteenth question to player 1
   {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"}
-
+//Twentieth question to player 2
 ];
 
-//player one get 5 questions, player two gets 5 questions. How?
-//display round two win or tie.
-//move to round three if game isn't over.
-
+//Third Round: Westeros.
 const roundThreeQuestions = [
   {"question" : "What's the name of the sword Bilbo Baggins gets from cave trolls? It glows blue when orcs are close. ", "correctAnswer" : "Sting", "incorrectAnswerOne" : "Glamdring", "incorrectAnswerTwo" : "Needle"},
-
+//Twenty-first question to player 1
   {"question" : "When Gandalf shouts 'YOU SHALL NOT PASS!', what is the name of the creature he is shouting at?", "correctAnswer" : "Balrog", "incorrectAnswerOne" : "Nazgul", "incorrectAnswerTwo" : "Cave Troll"},
-
+//Twenty-second question to player 2
   {"question" : "Orcs weren't always evil, nor in their current form. What were they once?", "correctAnswer" : "Elves", "incorrectAnswerOne" : "Men", "incorrectAnswerTwo" : "Dwarves"},
-
+//Twenty-third question to player 1
   {"question" : "You know the bow wielding elf, Legolas. What's his father's name?", "correctAnswer" : "Thranduil", "incorrectAnswerOne" : "Elrond", "incorrectAnswerTwo" : "Celeborn"},
-
+//Twenty-fourth question to player 2
   {"question" : "What was the name of the Skinchanger in 'The Hobbit' who turned into a bear?", "correctAnswer" : "Beorn", "incorrectAnswerOne" : "Radagast", "incorrectAnswerTwo" : "Bolg"},
-
+//Twenty-fifth question to player 1
   {"question" : "How many great wizards are there?", "correctAnswer" : "Five", "incorrectAnswerOne" : "Three", "incorrectAnswerTwo" : "One"},
-
+//Twenty-sixth question to player 2
   {"question" : "What was Gollum's name before he became Gollum?", "correctAnswer" : "Smeagol", "incorrectAnswerOne" : "Deagol", "incorrectAnswerTwo" : "Old Took"},
-
+//Twenty-seventh question to player 1
   {"question" : "Name the actual 'Two Towers' the second book is named for.", "correctAnswer" : "Minas Tirith & Minas Ithil", "incorrectAnswerOne" : "Barad Dur & Isengard", "incorrectAnswerTwo" : "Helm's Deep & Osgiliath"},
-
+//Twenty-eighth question player 2
   {"question" : "What's Boromir's father's name?", "correctAnswer" : "Denethor", "incorrectAnswerOne" : "Imrahil", "incorrectAnswerTwo" : "Theoden"},
-
+//Twenty-ninth question to player 1
   {"question" : "In total, how many great rings did Sauron forge?", "correctAnswer" : "20", "incorrectAnswerOne" : "1", "incorrectAnswerTwo" : "9"}
+//Thirtieth question to player 2
 ];
 
-//each player gets 5 questions if necessary.
-//display round three win or tie.
-//check if game is over
-//offer restart
 
 
 
 const playerOne = {
+  name: "Player One",
   score: 0,
   getPoint(){
     playerOne.score++;
@@ -122,6 +91,7 @@ const playerOne = {
 };
 
 const playerTwo = {
+  name: "Player Two",
   score: 0,
   getPoint(){
     playerTwo.score++;
@@ -174,106 +144,114 @@ const setupQuestions = () => {
           $answerC.on('click', rightAnswer);
 };
 
-//Ok, I'm stuck here.
-
+//A correct answer gains ONE point. The turn switches back to the other player.
 const rightAnswer = () => {
-currentPlayer.getPoint();
-scoreBoard();
-clearBoard();
-console.log("Gandalf looks to you for wisdom.");
-}
-//Right answer gives one point
+  currentPlayer.getPoint();
+  scoreBoard();
+  clearBoard();
+  console.log("Gandalf, Dumbledore, and the Grand Maesters are impressed.");
+};
 
+//An incorrect answer gains NO points. The turn switches back to the other player.
 const wrongAnswer = () => {
-clearBoard();
-scoreBoard();
-if(currentPlayer === playerOne){
-  currentPlayer = playerTwo;
-} else {
-  currentPlayer = playerOne;
-}
-console.log("Stupid, fat hobbit!");
-}
-//Wrong answer keeps score the same.
+  clearBoard();
+  scoreBoard();
+    if(currentPlayer === playerOne){
+      currentPlayer = playerTwo;
+    } else {
+      currentPlayer = playerOne;
+      }
+      console.log("*rings bell* Shame! *rings bell*");
+};
 
+//Logic of scoring, game, and round flow.
 const scoreBoard = () => {
+
+  //Adds player 1 point to the DOM.
   const $playerOnePoint =
   $('#player1').html('Player 1 Score: ' + playerOne.score);
+
+  //Adds player 2 point to the DOM.
   const $playerTwoPoint =
   $('#player2').html('Player 2 Score: ' + playerTwo.score);
-  console.log("************");
-  // console.log(gameState.round[gameState.questionNumber].question);
+  //When 10 questions are finished, the round switches to the next array of trivia questions.
+
+  if (currentPlayer === playerOne){
+    currentPlayer = playerTwo;
+  } else {
+    currentPlayer = playerOne;
+  }
+
   if(questionsAnswered === 10){
-    //start round two questions
-    console.log("round2!");
+    console.log("****************");
+    console.log("START ROUND 2!");
+    console.log("****************");
     gameState.round = roundTwoQuestions;
     gameState.questionNumber = 0;
     questionsAnswered = 10;
-    // setupQuestions();
-  } else if (questionsAnswered === 20){
-    console.log("round3!");
+  }
+  //When 20 questions are finished, the round switches to the final array of trivia questions.
+    else if (questionsAnswered === 20){
+    console.log("****************");
+    console.log("START ROUND 3!");
+    console.log("****************");
     gameState.round = roundThreeQuestions;
     gameState.questionNumber = 0;
     questionsAnswered = 20;
-    // setupQuestions();
-  } else if (questionsAnswered === 30){
+  }
+  //When all questions are finished, endGame takes the scores of both players and announces the winner, or if they've tied.
+    else if (questionsAnswered === 30){
     endGame();
   } else {
     // gameState.questionNumber++;
   }
 };
 
-
+//Checks scores for a tie.
 const checkTieGame = () => {
   if (playerOne.score === playerTwo.score){
     console.log("you're both so good you tied!");
   }
 };
 
+//Checks scores for a win and loss.
 const checkWinGame = () => {
   if (playerOne.score > playerTwo.score){
+    alert("Player one wins!")
     console.log("congrats player 1 you're a beast");
   } else if (playerTwo.score > playerOne.score) {
+    alert("Player two wins!")
     console.log("congrats player 2 you got this in the bag");
   }
 };
 
+//Clears DOM, switches players, and moves to next question.
 const clearBoard = () => {
   $('.clear').remove();
   $('.button').remove();
   questionsAnswered++;
-  console.log(questionsAnswered);
   scoreBoard();
   setupQuestions();
+  console.log(currentPlayer.name + ", you've answered question #" + questionsAnswered);
 };
-//Clears DOM and advances questions
 
+//Initiates trivia game from start screen.
 const startGame = () => {
   $('#welcome').remove();
   $('#start').remove();
     setupQuestions();
 };
-// Clears initial screen, starts trivia.
 
+//Ends the game after all questions have been answered, announcing a win, loss, and/or tie.
 const endGame = () => {
   $('.clear').remove();
   $('.button').remove();
   checkTieGame();
   checkWinGame();
 };
-//at end of game, checks for winner or tie!
 
+//Listens for click to initiate startGame function.
 $('#start').on('click', startGame);
-//Begins trivia!
-
-
-//STILL NEEDS:
-
-
-//player turn alerts
-//Randomized buttons
-//DOM oriented alerts and/or messages
-
 
 
 });
