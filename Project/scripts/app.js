@@ -167,11 +167,13 @@ const setupQuestions = () => {
 
       $('body').append($answerC);
 
-        // gameState.questionNumber++;
+        gameState.questionNumber++;
 
           $answerA.on('click', wrongAnswer);
           $answerB.on('click', wrongAnswer);
           $answerC.on('click', rightAnswer);
+
+          
 };
 
 //Ok, I'm stuck here.
@@ -208,18 +210,18 @@ const scoreBoard = () => {
     console.log("round2!");
     gameState.round = roundTwoQuestions;
     gameState.questionNumber = 0;
-    setupQuestions();
-    questionsAnswered = 0;
+    questionsAnswered = 10;
+    // setupQuestions();
   } else if (questionsAnswered === 20){
     console.log("round3!");
     gameState.round = roundThreeQuestions;
     gameState.questionNumber = 0;
-    setupQuestions();
-    questionsAnswered = 0;
+    questionsAnswered = 20;
+    // setupQuestions();
   } else if (questionsAnswered === 30){
     endGame();
   } else {
-    gameState.questionNumber++;
+    // gameState.questionNumber++;
   }
 };
 
