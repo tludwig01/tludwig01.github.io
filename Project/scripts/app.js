@@ -134,7 +134,7 @@ const playerTwo = {
 const gameState = {
   questionNumber: 0,
   player: playerOne,
-  round: roundOneQuestions,
+  round: roundOneQuestions
 };
 
 let currentPlayer = playerOne;
@@ -176,21 +176,17 @@ const setupQuestions = () => {
 
 //Ok, I'm stuck here.
 
-const roundTwo = () => {
-   console.log("works");
- }
-
 const rightAnswer = () => {
-clearBoard();
 currentPlayer.getPoint();
-// scoreBoard();
+scoreBoard();
+clearBoard();
 console.log("Gandalf looks to you for wisdom.");
 }
 //Right answer gives one point
 
 const wrongAnswer = () => {
 clearBoard();
-// scoreBoard();
+scoreBoard();
 if(currentPlayer === playerOne){
   currentPlayer = playerTwo;
 } else {
@@ -213,13 +209,13 @@ const scoreBoard = () => {
     gameState.round = roundTwoQuestions;
     gameState.questionNumber = 0;
     setupQuestions();
-    // questionsAnswered = 0;
+    questionsAnswered = 0;
   } else if (questionsAnswered === 20){
     console.log("round3!");
     gameState.round = roundThreeQuestions;
     gameState.questionNumber = 0;
     setupQuestions();
-    // questionsAnswered = 0;
+    questionsAnswered = 0;
   } else if (questionsAnswered === 30){
     endGame();
   } else {
@@ -232,7 +228,7 @@ const checkTieGame = () => {
   if (playerOne.score === playerTwo.score){
     console.log("you're both so good you tied!");
   }
-}
+};
 
 const checkWinGame = () => {
   if (playerOne.score > playerTwo.score){
@@ -240,30 +236,31 @@ const checkWinGame = () => {
   } else if (playerTwo.score > playerOne.score) {
     console.log("congrats player 2 you got this in the bag");
   }
-}
+};
 
 const clearBoard = () => {
   $('.clear').remove();
   $('.button').remove();
   questionsAnswered++;
   console.log(questionsAnswered);
-  setupQuestions();
   scoreBoard();
-
-}
+  setupQuestions();
+};
 //Clears DOM and advances questions
 
 const startGame = () => {
   $('#welcome').remove();
   $('#start').remove();
     setupQuestions();
-}
+};
 // Clears initial screen, starts trivia.
 
 const endGame = () => {
+  $('.clear').remove();
+  $('.button').remove();
   checkTieGame();
   checkWinGame();
-}
+};
 //at end of game, checks for winner or tie!
 
 $('#start').on('click', startGame);
