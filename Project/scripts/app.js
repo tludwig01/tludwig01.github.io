@@ -139,6 +139,8 @@ const setupQuestions = () => {
           $answerA.on('click', wrongAnswer);
           $answerB.on('click', wrongAnswer);
           $answerC.on('click', rightAnswer);
+
+//Really having trouble RANDOMIZING THE BUTTONS. I just want to shuffle them so the correct damn answer isn't on the same button every single time.
 };
 
 //A correct answer gains ONE point. The turn switches back to the other player.
@@ -208,10 +210,10 @@ const checkTieGame = () => {
 
 //Checks scores for a win and loss.
 const checkWinGame = () => {
-  if (playerOne.score > playerTwo.score){
+  if (playerOne.score < playerTwo.score){
     alert("Player one wins!")
     console.log("congrats player 1 you're a beast");
-  } else if (playerTwo.score > playerOne.score) {
+  } else if (playerTwo.score < playerOne.score) {
     alert("Player two wins!")
     console.log("congrats player 2 you got this in the bag");
   }
